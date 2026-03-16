@@ -377,6 +377,20 @@ opacity:1;
  * v2.0 | 20110126
  * License: none (public domain)
  * -------------------------------------------------------------------- */
+html, body {
+    height: 100%;
+}
+
+.s-pagewrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.s-content {
+    flex: 1;
+}
+
 html,
 body,
 div,

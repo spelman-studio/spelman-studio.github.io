@@ -1,0 +1,156 @@
+/* Instagram Carousel Swiper.js Integration */
+@import url('https://unpkg.com/swiper/swiper-bundle.min.css');
+
+/* Project Page Specific Instagram Carousel Styling */
+.project-page {
+    --instagram-border: 4px solid rgba(255, 255, 255, 0.15);
+    --instagram-shadow: 0 20px 60px rgba(142, 58, 124, 0.25);
+    --instagram-glow: 0 0 20px rgba(142, 58, 124, 0.3);
+}
+
+.project-page .instagram-swiper {
+    padding-bottom: 4rem !important;
+}
+
+.project-page .instagram-swiper .swiper-slide {
+    height: auto;
+    display: flex !important;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.project-page .instagram-swiper .swiper-slide .instagram-post {
+    flex: 1;
+    width: calc(50% - 0.5rem);
+    min-width: 0;
+}
+
+.project-page .instagram-swiper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    overflow: visible;
+}
+
+.project-page .instagram-swiper .swiper-pagination-bullets {
+    bottom: 1rem !important;
+}
+
+/* Instagram Navigation Arrows */
+.project-page .instagram-swiper .instagram-nav-btn {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 10 !important;
+    width: 44px !important;
+    height: 44px !important;
+    background: rgba(142, 58, 124, 0.95) !important;
+    border: 2px solid rgba(255, 255, 255, 0.4) !important;
+    border-radius: 50% !important;
+    color: white !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 12px 40px rgba(142, 58, 124, 0.4) !important;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1) !important;
+}
+
+.project-page .instagram-swiper .instagram-nav-btn::after {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: white !important;
+}
+
+.project-page .instagram-swiper .instagram-nav-btn:hover {
+    background: var(--color-1) !important;
+    transform: translateY(-50%) scale(1.15) !important;
+    box-shadow: 0 16px 48px rgba(142, 58, 124, 0.6) !important;
+}
+
+.project-page .instagram-swiper .swiper-button-prev {
+    left: -1.5rem !important;
+}
+
+.project-page .instagram-swiper .swiper-button-next {
+    right: -1.5rem !important;
+}
+
+/* Mobile Arrow Positioning */
+@media (max-width: 768px) {
+    .project-page .instagram-swiper .instagram-nav-btn {
+        width: 36px !important;
+        height: 36px !important;
+    }
+    
+    .project-page .instagram-swiper .swiper-button-prev {
+        left: -0.75rem !important;
+    }
+    
+    .project-page .instagram-swiper .swiper-button-next {
+        right: -0.75rem !important;
+    }
+}
+
+
+/* Mobile Arrow Adjustments */
+@media (max-width: 768px) {
+    .project-page .instagram-swiper {
+        padding-bottom: 3rem !important;
+    }
+    
+    .project-page .instagram-swiper .post-caption {
+        font-size: 0.75rem !important;
+        padding: 0.5rem 0.75rem !important;
+    }
+
+    .project-page .instagram-nav-btn {
+        width: 36px !important;
+        height: 36px !important;
+    }
+}
+
+/* Ensure smooth swiper navigation */
+.project-page .instagram-swiper .swiper-slide {
+    cursor: grab;
+}
+
+.project-page .instagram-swiper .swiper-slide:active {
+    cursor: grabbing;
+}
+
+/* Safari backdrop-filter fix */
+@supports (-webkit-backdrop-filter: none) {
+    .project-page .instagram-swiper .post-caption {
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+    }
+}
+
+/* Custom scrollbar for swiper (Webkit browsers) */
+.project-page .instagram-swiper::-webkit-scrollbar {
+    display: none;
+}
+
+.project-page .instagram-swiper {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Loading state for images */
+.project-page .instagram-post img {
+    background: linear-gradient(90deg, 
+        var(--color-gradient-start) 0%, 
+        var(--color-gradient-mid) 50%, 
+        var(--color-gradient-end) 100%);
+    background-size: 200% 100%;
+    animation: shimmerLoad 1.5s infinite;
+}
+
+@keyframes shimmerLoad {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.project-page .instagram-post img[src] {
+    animation: none;
+}
+

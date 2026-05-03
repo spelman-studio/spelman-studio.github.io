@@ -1142,6 +1142,28 @@ textarea {
     display: block;
 }
 
+@media screen and (max-width: 768px) {
+    .project-hero img {
+        display: none;
+    }
+    
+    .project-hero__text {
+        position: static;
+        text-align: center;
+        padding: var(--vspace-2) var(--gutter);
+        background: rgba(26, 0, 22, 0.9);
+    }
+    
+    .project-hero__text h1 {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+        margin-bottom: var(--vspace-0_5);
+    }
+    
+    .project-hero__text p {
+        font-size: var(--text-md);
+    }
+}
+
 .project-hero {
     position: relative;
     width: 100%;

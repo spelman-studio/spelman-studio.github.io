@@ -4330,6 +4330,12 @@ td:last-child {
     border         : 2px solid white;
 }
 
+@media screen and (max-width: 600px) {
+    .s-intro__content-media {
+        display: none;
+    }
+}
+
 .s-intro__scroll-down svg {
     height: calc(0.3 * var(--space));
     width : calc(0.3 * var(--space));
